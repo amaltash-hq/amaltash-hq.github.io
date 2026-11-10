@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- Amaltash developer site, MCP server setup. AMA-10800, 2026-11-10. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finance Calculator MCP Server for Claude and Claude Code | Amaltash</title>
+<meta name="description" content="Add a free, read-only finance calculator MCP server to Claude: https://tools.amaltash.com/mcp. Claude Code plugin install lines and the MCP Registry entry.">
+<link rel="canonical" href="https://amaltash-hq.github.io/mcp/">
+<link rel="icon" href="/assets/icon-512.png" type="image/png">
+<meta name="theme-color" content="#f6f1e7">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amaltash">
+<meta property="og:title" content="Amaltash finance calculator MCP server">
+<meta property="og:description" content="Public, read-only MCP server with 13 finance calculators. No sign-in.">
+<meta property="og:url" content="https://amaltash-hq.github.io/mcp/">
+<meta property="og:image" content="https://amaltash-hq.github.io/assets/card-stock.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@amaltash_hq">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Amaltash",
+  "url": "https://amaltash.com",
+  "logo": "https://amaltash.com/icon-512.png",
+  "sameAs": [
+    "https://x.com/amaltash_hq",
+    "https://apps.apple.com/app/id6785155640",
+    "https://play.google.com/store/apps/details?id=com.amaltash.trade",
+    "https://github.com/amaltash-hq"
+  ]
+}
+</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><img src="/assets/icon-512.png" alt="" width="28" height="28">Amaltash</a>
+  <nav class="nav" aria-label="Main">
+    <a href="/">Home</a>
+    <a href="/calculators/">Calculators</a>
+    <a href="/mcp/" aria-current="page">MCP server</a>
+    <a href="https://amaltash.com">amaltash.com</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>Finance calculator <span>MCP server</span></h1>
+    <p class="lead">Amaltash Investment &amp; Retirement Calculators. Compound interest, investment, retirement, CD, S&amp;P 500 and DCA calculators with charts.</p>
+    <ul class="facts">
+      <li>Public</li>
+      <li>Read-only</li>
+      <li>No sign-in</li>
+      <li>Streamable HTTP</li>
+    </ul>
+  </div>
+
+  <section id="server">
+    <h2>Server URL</h2>
+    <pre><code>https://tools.amaltash.com/mcp</code></pre>
+    <p>It has 13 calculators and a list of the stocks and funds it knows. It cannot trade or move money.</p>
+  </section>
+
+  <section id="claude">
+    <h2>Add it in Claude</h2>
+    <ol>
+      <li>In Claude, open <b>Settings</b>, then <b>Connectors</b>.</li>
+      <li>Add a custom connector.</li>
+      <li>Paste <code>https://tools.amaltash.com/mcp</code>. You don't need to sign in.</li>
+      <li>Ask a money question, like "What does $10,000 grow to at 5% in 10 years?"</li>
+    </ol>
+    <p><a href="https://amaltash.com/mcp/calculators?utm_source=github_pages&amp;utm_medium=referral&amp;utm_campaign=developer_site&amp;utm_content=mcp_docs">Full guide and example questions</a></p>
+  </section>
+
+  <section id="claude-code">
+    <h2>Claude Code plugins</h2>
+    <p>Add the Amaltash marketplace, then install a plugin:</p>
+    <pre><code>/plugin marketplace add amaltash-hq/mcp
+/plugin install calculators@amaltash
+/plugin install trading@amaltash</code></pre>
+    <p>Or add only the server:</p>
+    <pre><code>claude mcp add --transport http amaltash-calculators https://tools.amaltash.com/mcp</code></pre>
+    <p>Source and docs: <a href="https://github.com/amaltash-hq/mcp">github.com/amaltash-hq/mcp</a>.</p>
+  </section>
+
+  <section id="registry">
+    <h2>MCP Registry</h2>
+    <p>Name: <code>com.amaltash/calculators</code>.</p>
+    <p><a href="https://registry.modelcontextprotocol.io/v0/servers?search=com.amaltash/calculators">See the MCP Registry entry</a></p>
+  </section>
+
+  <section id="links">
+    <h2>More</h2>
+    <ul>
+      <li><a href="https://amaltash.com/mcp/calculators#numbers-heading">How the numbers work</a></li>
+      <li><a href="https://amaltash.com/mcp/calculators#limits-heading">What it can't do</a></li>
+      <li><a href="https://amaltash.com/policies/privacy#calculators-connector">Privacy</a></li>
+      <li><a href="https://amaltash.com/contact">Support</a></li>
+    </ul>
+  </section>
+
+  <section id="important">
+    <h2>Important</h2>
+    <p class="disclaimer">Results are for education only. They are not investment advice or a promise of future results. Projections are hypothetical. Past results don't predict future ones. You can lose money. Published by Amaltash Advisors LLC.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <div class="links">
+    <a href="https://amaltash.com">amaltash.com</a>
+    <a href="https://amaltash.com/policies/privacy#calculators-connector">Privacy</a>
+    <a href="https://amaltash.com/policies/terms">Terms</a>
+    <a href="https://amaltash.com/contact">Contact</a>
+    <a href="https://github.com/amaltash-hq">GitHub</a>
+    <a href="https://x.com/amaltash_hq">X</a>
+  </div>
+  <p>&copy; 2026 Amaltash Advisors LLC.</p>
+</div></footer>
+</body>
+</html>
