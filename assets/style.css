@@ -85,3 +85,5 @@ footer .links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-bottom: 8p
   .grid-2 { grid-template-columns: repeat(2, 1fr); }
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
 }
+/* Demo video, AMA-10800 (2026-11-10): keep 16:9 at any width. */
+video.demo { height: auto; display: block; margin-bottom: 8px; }
